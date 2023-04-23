@@ -4,9 +4,12 @@ pipeline {
         stage('Run Tests') {
             parallel {
                 stage('Test On Windows') {
+                    /*
                     agent {
                         label "windows"
                     }
+                    */
+                    agent any
                     steps {
                         cmd_exec('echo "Buils starting..."')
                         cmd_exec('echo "dir c:\"')
@@ -20,9 +23,12 @@ pipeline {
                     }
                 }
                 stage('Test On Windows in parallel') {
+                    /*
                     agent {
                         label "windows"
                     }
+                    */
+                    agent any
                     steps {
                         cmd_exec('echo "Buils starting..."')
                         cmd_exec('echo "dir d:\"')
