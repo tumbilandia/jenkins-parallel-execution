@@ -8,7 +8,7 @@ pipeline {
                         label "windows"
                     }
                     steps {
-                        d:\\_dev\\sopra\\projects\\airbus\\00-TransformationPlan\\01.0-DevOps\\20230419-ADS-DevOps-test\\jenkins-parallel-execution\\run-tests.bat'
+                        d:\_dev\sopra\projects\airbus\00-TransformationPlan\01.0-DevOps\20230419-ADS-DevOps-test\jenkins-parallel-execution\run-tests.bat'
                     }
                     post {
                         always {
@@ -21,7 +21,7 @@ pipeline {
                         label "windows"
                     }
                     steps {
-                        bat 'd:\\_dev\\sopra\\projects\\airbus\\00-TransformationPlan\\01.0-DevOps\\20230419-ADS-DevOps-test\\jenkins-parallel-execution\\run-tests1.bat'
+                        bat 'd:\_dev\sopra\projects\airbus\00-TransformationPlan\01.0-DevOps\20230419-ADS-DevOps-test\jenkins-parallel-execution\run-tests1.bat'
                     }
                     post {
                         always {
