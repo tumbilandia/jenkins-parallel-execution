@@ -1,9 +1,10 @@
 pipeline {
+    // java -jar C:\dev\jenkins\jenkins.cli\jenkins-cli.jar -s http://localhost:8080 -auth admin:112fd990b3412b090e6ff6207d32b6d428 build poc-ads-ansible/parallel-execution -f -v
     agent none
     stages {
         stage('Run Tests') {
             parallel {
-                stage('Test On Windows') {
+                stage('Test On Windows.01') {
                     /*
                     agent {
                         label "windows"
@@ -11,18 +12,21 @@ pipeline {
                     */
                     agent any
                     steps {
-                        cmd_exec('echo "Buils starting..."')
-                        cmd_exec('echo "dir c:\"')
+                        bat '''  ECHO Hello World -- Test on Windows.01  '''
+                        bat '''  dir c:\  '''
+                        //cmd_exec('echo "Buils starting..."')
+                        //cmd_exec('echo "dir c:\"')
                         //bat 'd:\_dev\sopra\projects\airbus\00-TransformationPlan\01.0-DevOps\20230419-ADS-DevOps-test\jenkins-parallel-execution\run-tests.bat'
                     }
                     post {
                         always {
                             //junit "**/TEST-*.xml"
                             cmd_exec('echo "dir c:\temp\"')
+                            bat '''  this is post step -- Test on Windows.01  '''
                         }
                     }
                 }
-                stage('Test On Windows in parallel') {
+                stage('Test On Windows.02 in parallel') {
                     /*
                     agent {
                         label "windows"
@@ -30,14 +34,17 @@ pipeline {
                     */
                     agent any
                     steps {
-                        cmd_exec('echo "Buils starting..."')
-                        cmd_exec('echo "dir d:\"')
+                        bat '''  ECHO Hello World -- Test on Windows.02  '''
+                        bat '''  dir d:\  '''
+                        //cmd_exec('echo "Buils starting..."')
+                        //cmd_exec('echo "dir d:\"')
                         //bat 'd:\_dev\sopra\projects\airbus\00-TransformationPlan\01.0-DevOps\20230419-ADS-DevOps-test\jenkins-parallel-execution\run-tests1.bat'
                     }
                     post {
                         always {
                             //junit "**/TEST-*.xml"
-                            cmd_exec('echo "dir d:\temp"')
+                            //cmd_exec('echo "dir d:\temp"')
+                            bat '''  this is post step -- Test on Windows.02  '''
                         }
                     }
                 }
