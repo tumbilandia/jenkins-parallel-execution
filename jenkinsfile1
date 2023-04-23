@@ -14,7 +14,8 @@ pipeline {
                     }
                     post {
                         always {
-                            junit "**/TEST-*.xml"
+                            //junit "**/TEST-*.xml"
+                            cmd_exec('echo "dir c:\temp\"')
                         }
                     }
                 }
@@ -29,7 +30,8 @@ pipeline {
                     }
                     post {
                         always {
-                            junit "**/TEST-*.xml"
+                            //junit "**/TEST-*.xml"
+                            cmd_exec('echo "dir d:\temp"')
                         }
                     }
                 }
