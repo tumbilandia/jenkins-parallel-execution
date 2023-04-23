@@ -13,7 +13,7 @@ pipeline {
                     agent any
                     steps {
                         bat '''  ECHO Hello World -- Test on Windows.01  '''
-                        bat '''  dir c:\  '''
+                        //bat '''  dir c:\  '''
                         //cmd_exec('echo "Buils starting..."')
                         //cmd_exec('echo "dir c:\"')
                         //bat 'd:\_dev\sopra\projects\airbus\00-TransformationPlan\01.0-DevOps\20230419-ADS-DevOps-test\jenkins-parallel-execution\run-tests.bat'
@@ -21,7 +21,7 @@ pipeline {
                     post {
                         always {
                             //junit "**/TEST-*.xml"
-                            cmd_exec('echo "dir c:\temp\"')
+                            //cmd_exec('echo "dir c:\temp\"')
                             bat '''  this is post step -- Test on Windows.01  '''
                         }
                     }
@@ -35,7 +35,7 @@ pipeline {
                     agent any
                     steps {
                         bat '''  ECHO Hello World -- Test on Windows.02  '''
-                        bat '''  dir d:\  '''
+                        //bat '''  dir d:\  '''
                         //cmd_exec('echo "Buils starting..."')
                         //cmd_exec('echo "dir d:\"')
                         //bat 'd:\_dev\sopra\projects\airbus\00-TransformationPlan\01.0-DevOps\20230419-ADS-DevOps-test\jenkins-parallel-execution\run-tests1.bat'
